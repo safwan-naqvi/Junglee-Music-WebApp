@@ -5,7 +5,10 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+a {
+  color: #fff;
+  text-decoration: none;
+}
 body {
   background-image: url(./Asset/bg.png);
   background-size: cover;
@@ -45,6 +48,33 @@ header nav a {
   object-fit: contain;
   transition: 0.2s all ease-in-out;
   cursor: pointer;
+  animation: bouncing 4s ease-in-out forwards infinite alternate;
+}
+@keyframes bouncing {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(10px);
+  }
+  75% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.flower {
+  animation: flower 3s ease-in-out forwards infinite alternate;
+}
+@keyframes flower {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-5deg);
+  }
 }
 
 .logo:hover,
@@ -70,7 +100,8 @@ header nav a:hover {
   width: auto;
   position: absolute;
   top: -43px;
-  left: 140px;
+  left: 135px;
+  z-index: -5;
 }
 
 .box1 h1 {
